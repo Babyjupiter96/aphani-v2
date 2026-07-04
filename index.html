@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aphani Solutions | Elite Sales for Boutique Fitness Franchises</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@400;500;600;700&display=swap');
+
+    :root {
+      --navy: #040918;
+      --deep: #0C1830;
+      --accent: #2E5F8A;
+      --gray: #14213A;
+      --silver: #E8E8ED;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'EB Garamond', serif;
+      background: #040918;
+      color: white;
+      line-height: 1.7;
+    }
+    header {
+      position: absolute;
+      top: 0; width: 100%;
+      background: transparent;
+      z-index: 10;
+      padding: 1.6rem 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 1.1rem;
+    }
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(rgba(4,9,24,0.92), rgba(4,9,24,0.95)),
+                  #040918;
+      display: flex;
+      align-items: center;
+      padding: 0 6%;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 70px 70px;
+      pointer-events: none;
+    }
+    .hero-content { max-width: 1100px; margin: 0 auto; text-align: center; }
+    h1 { font-size: 3.8rem; line-height: 1.1; margin-bottom: 1rem; }
+    .tagline { font-size: 1.6rem; color: #A9B7CE; margin-bottom: 2rem; }
+    .overline {
+      text-align: center;
+      letter-spacing: 4px;
+      font-size: 0.85rem;
+      color: #8FB3D4;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .cta {
+      background: var(--accent);
+      color: white;
+      padding: 1.1rem 2.6rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      display: inline-block;
+      margin: 0.5rem;
+    }
+    .stats {
+      background: var(--deep);
+      padding: 3.5rem 6%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 2.5rem;
+      text-align: center;
+    }
+    .stat-number { font-size: 3rem; font-weight: 600; color: #8FB3D4; }
+    section { padding: 7rem 6%; }
+    h2 { font-size: 3rem; text-align: center; margin-bottom: 3.5rem; }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px,1fr));
+      gap: 2rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .card {
+      background: var(--gray);
+      padding: 2.8rem 2.2rem;
+      border-radius: 16px;
+      border: 1px solid rgba(143,179,212,0.12);
+    }
+    .card h3 { margin-bottom: 0.6rem; }
+    .card strong { display: block; font-size: 2.2rem; color: #8FB3D4; margin-bottom: 0.4rem; }
+    footer {
+      background: #030812;
+      padding: 4rem 6%;
+      text-align: center;
+      color: #8B96AC;
+    }
+
+    /* --- motion --- */
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .hero-content > * { opacity: 0; animation: riseIn 1s ease forwards; }
+    .hero-content > *:nth-child(1) { animation-delay: 0.15s; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.35s; }
+    .hero-content > *:nth-child(3) { animation-delay: 0.55s; }
+    .hero-content > *:nth-child(4) { animation-delay: 0.55s; }
+    .hero-content > *:nth-child(5) { animation-delay: 0.75s; }
+    .hero-content > *:nth-child(6) { animation-delay: 0.9s; }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s ease, transform 0.9s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* --- client logo marquee --- */
+    .clients {
+      background: var(--deep);
+      padding: 2.2rem 0 0.4rem;
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 26s linear infinite;
+    }
+    .marquee-set {
+      display: flex;
+      align-items: center;
+      gap: 6rem;
+      padding-right: 6rem;
+    }
+    .marquee-set img {
+      height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.65;
+    }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-content > * { animation: none; opacity: 1; }
+      .reveal { transition: none; opacity: 1; transform: none; }
+      .marquee-track { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <h2 style="font-size:2.1rem;">Aphani Solutions</h2>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#results">Results</a>
+      <a href="#partnership">Partnership</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Elite Sales.<br>Exceptional Results.</h1>
+      <p class="tagline">Where Calls Convert</p>
+      <p style="font-size:1.3rem; max-width:640px; margin:0 auto;">Aphani Solutions is the dedicated call center and sales team for boutique fitness franchise owners.</p>
+      <br>
+      <a href="#partnership" class="cta">See How It Works →</a>
+      <a href="#contact" class="cta" style="background:transparent; border:2px solid #2E5F8A;">Talk to Us</a>
+    </div>
+  </section>
+
+  <!-- CLIENT LOGOS -->
+  <div class="clients" aria-label="Fitness brands Aphani Solutions works with">
+    <div class="marquee-track">
+      <div class="marquee-set">
+        <img src="logos/f45.svg" alt="F45 Training">
+        <img src="logos/fxb.png" alt="Farrell's eXtreme Bodyshaping">
+        <img src="logos/mayweather.png" alt="Mayweather Boxing + Fitness">
+        <img src="logos/maxchallenge.png" alt="The MAX Challenge">
+      </div>
+      <div class="marquee-set" aria-hidden="true">
+        <img src="logos/f45.svg" alt="">
+        <img src="logos/fxb.png" alt="">
+        <img src="logos/mayweather.png" alt="">
+        <img src="logos/maxchallenge.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div><span class="stat-number">16</span><br>Active Locations</div>
+    <div><span class="stat-number">4</span><br>States Served</div>
+    <div><span class="stat-number">5</span><br>Fitness Brands</div>
+    <div><span class="stat-number">1,400+</span><br>Calls / Location / Month</div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section id="services" style="background:var(--deep); padding-top:4rem;">
+    <p class="overline">Services</p>
+    <h2>What We Do</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>We Make the Calls</h3>
+        <p>1,400+ outbound calls per location per month using a script built around your specific program.</p>
+      </div>
+      <div class="card">
+        <h3>We Close the Memberships</h3>
+        <p>Needs assessment → value build → close on the first call. Trial is the backup.</p>
+      </div>
+      <div class="card">
+        <h3>You See Everything, Every Night</h3>
+        <p>Daily EOD reports + Monthly MACRO reports + Biweekly strategy calls.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY APHANI -->
+  <section>
+    <p class="overline">The Difference</p>
+    <h2>Why Aphani</h2>
+    <div class="card-grid">
+      <div class="card">We Know the Programs (FXB, InBody, Club Ready, etc.)</div>
+      <div class="card">First-Call Close Mentality</div>
+      <div class="card">Daily EOD Reports</div>
+      <div class="card">Monthly MACRO Reports</div>
+      <div class="card">Proven Fast Results</div>
+      <div class="card">170% Qualified Lead Conversion</div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" style="background:var(--deep);">
+    <p class="overline">Proof</p>
+    <h2>Results That Speak</h2>
+    <div class="card-grid">
+      <div class="card">
+        <strong>$17,006</strong>Month 1 — FXB Eden Prairie
+      </div>
+      <div class="card">
+        <strong>5.49× ROI</strong>FXB Grimes (90 days)
+      </div>
+      <div class="card">
+        <strong>87.5%</strong>Trial Close Rate — FXB Waukee
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERSHIP -->
+  <section id="partnership">
+    <p class="overline">Partnership</p>
+    <h2>Ready to Partner?</h2>
+    <p style="text-align:center; font-size:1.3rem; max-width:700px; margin:0 auto 3rem;">
+      Stop leaving memberships on the table. Let us handle sales while you run your studio.
+    </p>
+    <div style="text-align:center;">
+      <a href="#contact" class="cta" style="font-size:1.4rem; padding:1.2rem 3rem;">Apply for Partnership</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="background:var(--deep);">
+    <p class="overline">Contact</p>
+    <h2>Contact Us</h2>
+    <p style="text-align:center; margin-bottom:2rem; color:#A9B7CE;">
+      306 W Redwood St, STE 201, Baltimore, MD 21201 &nbsp;·&nbsp; (945) 412-8283
+    </p>
+    <form style="max-width:600px; margin:0 auto;">
+      <input type="text" placeholder="Your Name" style="width:100%; padding:1rem; margin:0.5rem 0; background:#0C1830; border:1px solid rgba(143,179,212,0.25); border-radius:8px; color:white;" required><br>
+      <input type="email" placeholder="Email" style="width:100%; padding:1rem; margin:0.5rem 0; background:#0C1830; border:1px solid rgba(143,179,212,0.25); border-radius:8px; color:white;" required><br>
+      <input type="tel" placeholder="Phone" style="width:100%; padding:1rem; margin:0.5rem 0; background:#0C1830; border:1px solid rgba(143,179,212,0.25); border-radius:8px; color:white;"><br>
+      <textarea placeholder="Tell us about your studio" rows="5" style="width:100%; padding:1rem; margin:0.5rem 0; background:#0C1830; border:1px solid rgba(143,179,212,0.25); border-radius:8px; color:white;"></textarea><br>
+      <button type="submit" class="cta" style="width:100%; border:none; cursor:pointer;">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Aphani Solutions LLC • All Rights Reserved</p>
+    <p>Conversion-Focused. Client-Centered. Exceptionally Executed.</p>
+  </footer>
+
+  <script>
+    var revealEls = document.querySelectorAll('section h2, .overline, .card, .stats > div, #partnership p, #partnership div, #contact p, #contact form');
+    document.querySelectorAll('.card-grid, .stats').forEach(function (grid) {
+      Array.prototype.forEach.call(grid.children, function (child, i) {
+        child.dataset.d = i * 120;
+      });
+    });
+    revealEls.forEach(function (el) { el.classList.add('reveal'); });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = (entry.target.dataset.d || 0) + 'ms';
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  </script>
+
+</body>
+</html>
